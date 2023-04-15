@@ -1,0 +1,340 @@
+html {
+font-size: 1.2em;
+font-family: "Open Sans", "Noto Sans",
+             "Microsoft JhengHei", "Microsoft YaHei Light", "Apple LiSung Light",
+             sans-serif;
+background-image: url(bg.png);
+background-blend-mode: overlay;
+background-attachment: fixed;
+}
+
+body {
+color: black;
+text-align: left;
+margin: .5rem;
+padding: 0;
+}
+
+/* link */
+a {
+color: brown;
+text-decoration: underline;
+}
+a:hover {
+color: darkred;
+}
+a:empty::after {
+content: attr(href);
+display: table-cell;
+text-decoration: underline;
+max-width: 28rem;
+text-indent: 0;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+/* article */
+.a {
+display: block;
+overflow: visible;
+line-height: 1.5rem;
+height: auto;
+background-color: rgba(255,255,255,0.3);
+/*background-image: url(bg1.gif);
+background-position: top right;
+background-repeat: no-repeat;
+background-attachment: scroll;*/
+border: 1px solid gray;
+border-radius: 8px;
+margin-top: .5rem;
+padding: .5rem;
+}
+
+
+/* banner */
+.b {
+display: block;
+line-height: 48px;
+font-size: 48px;
+vertical-align: middle;
+text-indent: 0;
+margin: 0;
+padding: .75rem .75rem .75rem .75rem;
+border: 3px dashed #333;
+background-color: rgb(255, 196, 196);
+}
+
+.t {
+    text-align: left;
+    border: 2px dashed #555;
+    background-color: rgb(196, 255, 196);
+}
+
+/* poem */
+.w {
+display: block;
+font-size: .8rem;
+line-height: 1rem;
+text-indent: 0;
+margin: 0;
+padding: 0 .5rem 0 .5rem;
+width: inherit;
+}
+.w {margin-top: .5rem;}
+.w ~ .w {margin: 0;}
+
+/* content */
+.c {
+display: block;
+overflow: hidden;
+text-align: center;
+line-height: 1.5rem;
+word-wrap: break-word;
+height: auto;
+margin: 0 auto 0 auto;
+padding: 0;
+}
+
+/* paragraph */
+p {
+text-indent: 2rem;
+text-align: left;
+padding: 0 1.5rem 0 1.5rem;
+}
+
+/* math */
+u {text-decoration: overline; text-decoration-skip-ink: none;}
+pre>u {text-underline-offset: -2px;}
+q {outline: 1px solid #000; border-radius: 2px; padding: 0 2px 0 2px;}
+pre>q {outline-offset: -1px; border-radius: 1px;}
+q:before, q:after {content: "";}
+sub, sup {line-height: .5rem;}
+p>sub, p>sup {font-size: 70%;}
+pre>sub, pre>sup {margin-right: 2px;}
+ruby {ruby-position: under;}
+rt {font-size: .8rem;}
+/* Firefox (V) Edge (X) */
+rt {margin-bottom: -.8rem; position: relative; top: -.2rem;}
+/* Firefox (V) Edge (V) incorrect in multiple lines */
+/*p:has(ruby) {margin-bottom: -.8rem;}*/
+ruby:has(ruby) {ruby-position: over;} /*both*/
+ruby:has(ruby)>rt {font-size: .6rem;} /*bottom*/
+ruby>ruby>rt {font-size: .6rem;} /*top*/
+ruby.sqrt {ruby-position: over;}
+ruby.sqrt>rt {top: -.3rem;}
+
+/* block */
+pre {
+font-family: "Cascadia Code", "Fira Code", "Consolas", "Monaco", "Ubuntu Mono",
+             "Microsoft JhengHei", "Microsoft YaHei Light", "Apple LiSung Light",
+             monospace;
+font-size: .8rem;
+line-height: 1rem;
+text-indent: 0;
+text-align: left;
+tab-size: 2;
+width: auto;
+padding-left: .5rem;
+border-left: .5rem solid gray;
+border-radius: .25rem;
+margin: 0.5rem 1.5rem 0.5rem 1.5rem;
+word-wrap: break-word;
+}
+pre + :is(img, canvas, .i, .z, .div > iframe),
+:is(img, canvas, .i, .z, .div > iframe) + pre {
+margin-top: 1.5rem;
+}
+
+/* exercise */
+.e {
+font-size: .8rem;
+text-indent: 0;
+text-align: left;
+line-height: 1.5em;
+letter-spacing: 2px;
+word-spacing: .5rem;
+word-wrap: break-word;
+color: black;
+background-color: rgba(242,215,224,.5);
+border: 1px solid rgba(184,61,104,.5);
+border-radius: 2rem / 1rem;
+width: auto;
+margin: 1rem 1.5rem 1rem 1.5rem;
+}
+
+/* GWT demo */
+.d {
+text-indent: 0;
+margin-left: 0;
+margin-right: auto;
+}
+
+/* canvas */
+canvas {
+display: block;
+margin: 0 auto 0 auto;
+border: 1px solid black;
+}
+
+/* movie */
+.z, iframe {
+display: block;
+width: 560px;
+height: 315px;
+border: 1px dotted gray;
+overflow: hidden;
+}
+.z, iframe, img, embed, audio, video, svg {
+display: block;
+margin: .5rem auto .5rem auto;
+}
+
+/* model */
+object {
+display: none;
+}
+
+/* mathematica */
+blockquote {
+display: none;
+}
+
+/* consecutive image */
+.i {
+display: block;
+text-align: center;
+}
+.i :is(img, canvas, video, audio, svg) {
+vertical-align: middle;
+display: inline-block;
+margin: 0;
+}
+
+/* sidebar */
+.m {
+display: block;
+line-height: 1.2rem;
+text-align: center;
+text-indent: 0;
+letter-spacing: 1px;
+background-color: rgba(255,255,255,0.3);
+/*background-image: url(bg2.png), linear-gradient(to top right, #DDDDDD, #CCCCCC);
+background-position: bottom left, 0;
+background-repeat: no-repeat;
+background-attachment: scroll;*/
+border: 1px solid gray;
+border-radius: 8px;
+min-width: 16rem;
+max-width: 16rem;
+height: calc(100% - 1rem);
+min-height: calc(100% - 1rem);
+overflow: hidden;
+overflow-y: scroll;
+overscroll-behavior-y: contain;
+scrollbar-width: none;
+vertical-align: top;
+position: fixed;
+left: .5rem;
+top: .5rem;
+}
+.m a {text-decoration: none; color: inherit;}
+.m a:hover {text-decoration: underline; color: darkred;}
+
+.m::-webkit-scrollbar {
+width: 0;
+background: transparent;
+}
+
+.m .li {
+display: block;
+text-align: left;
+border-bottom: 1px dotted gray;
+height: auto;
+margin: 0;
+padding: .3rem .6rem .3rem .6rem;
+}
+
+.m .li:first-child {
+font-size: 1.2rem;
+line-height: 1.5rem;
+vertical-align: middle;
+letter-spacing: 2px;
+padding: .5rem .6rem .5rem .6rem;
+}
+
+/* parentheses */
+.m .s {font-size: .85rem;}
+.b .s {font-size: 1rem;}
+
+/* code */
+textarea {
+display: none;
+}
+
+/* code */
+.sh {
+display: block;
+overflow: visible;
+font-family: "Cascadia Code", "Fira Code", "Lucida Console", "Courier New",
+             "Microsoft JhengHei", "Microsoft YaHei Light", "Apple LiSung Light",
+             monospace;
+font-size: .8rem;
+line-height: 1.5em;
+text-align: left;
+color: black;
+background-color: rgba(255,255,255,0.2);
+border: 1px solid gray;
+border-radius: 8px;
+width: auto;
+margin: .5rem 1.5rem .5rem 1.5rem;
+tab-size: 4;
+white-space: break-spaces;
+word-wrap: break-word;
+word-break: break-all;
+line-break: anywhere;
+}
+
+/* line number + content */
+.sh ol {
+list-style: decimal outside;
+margin: 0;
+padding-left: 2.5rem; /* line number */
+}
+/* line number color */
+.sh ol li::marker {color: lightgray;}
+/* content */
+.sh ol li {border-top: 1px dotted gray;}
+.sh ol li:first-child {border: 0;}
+
+.sh .link, .sh .comment {color: #080;}
+.sh .macro {color: purple;}
+.sh .string {color: #80c;}
+.sh .keyword {color: #069;}
+.sh .type {color: brown;}
+.sh .hex, .sh .value {color: #c80;}
+
+/* mobile */
+@media only screen and (max-device-width: 1000px) {
+html {font-size: 1.8em;}
+body {margin: 0; padding: 0;}
+:root {--w: calc(100vw - 1rem); --h: calc(100vh - 1rem);}
+.m {min-width: var(--w); max-width: var(--w); min-height: var(--h); max-height: var(--h);}
+.a {min-width: 100vw; max-width: 100vw;}
+.a {margin: .5rem 0 .5rem 100vw;}
+.a {padding: .5rem .25rem .5rem .25rem; box-sizing: border-box;}
+p, .b, .w, .t, .e {width: var(--w); padding: 0 .25rem 0 .25rem;}
+.t, .e {width: calc(var(--w) - .25rem); border-radius: .25rem;}
+a:empty::after {max-width: var(--w);}
+p, a {line-break: anywhere;}
+p {text-indent: 0rem;}
+.e, pre, .sh {margin: .25rem 0 .25rem 0;}
+.z, iframe, img, embed, audio, video, svg {margin-left: .25rem;}
+.z, iframe {width: var(--w); height: calc(var(--w) / 560 * 315);}
+img {zoom: 125%;}
+.sh, pre, .i {overflow-x: scroll; scrollbar-width: none;}
+:is(.sh, pre, .i)::-webkit-scrollbar {height: 0; background: transparent;}
+.i {white-space: nowrap;}
+.sh ol {min-width: max-content;}
+.sh ol {padding-left: 2rem;}
+}
